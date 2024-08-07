@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num" placeholder="Number">
+    <button onclick="div()">check</button>
+
+    <div id="ans"></div>
+</body>
+<script>
+    function div(){
+        let age = Number(document.getElementById("num").value);
+        let res;
+
+        if(age % 3 == 0 && num % 5 == 0){
+            res = "divisible";
+        } else{
+            res = "not divisible";
+        }
+
+        document.getElementById("ans").innerHTML = `
+            <h3>  ${res} </h3>
+        `
+    }
+</script>
+</html>

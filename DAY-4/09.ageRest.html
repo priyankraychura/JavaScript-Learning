@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="age" placeholder="First Number">
+    <button onclick="max()">check</button>
+
+    <div id="ans"></div>
+</body>
+<script>
+    function max(){
+        let age = Number(document.getElementById("age").value);
+        let res;
+
+        if(age >= 13){
+            res = "allowed";
+        } else{
+            res = "not allowed";
+        }
+
+        document.getElementById("ans").innerHTML = `
+            <h3> You are ${res} to access the website</h3>
+        `
+    }
+</script>
+</html>

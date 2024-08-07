@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1" placeholder="Principal Amount">
+    <input type="text" id="num2" placeholder="Rate of Interest">
+    <input type="text" id="num3" placeholder="Number of Years">
+    <button onclick="max()">Find Interest</button>
+
+    <div id="ans"></div>
+</body>
+<script>
+    function max(){
+        let p = Number(document.getElementById("num1").value);
+        let r = Number(document.getElementById("num2").value);
+        let n = Number(document.getElementById("num3").value);
+        let si;
+
+        if(num1 < 0 || num2 < 0 || num3 < 0){
+            document.getElementById("ans").innerHTML = `
+            <h3> All values should be positive </h3>
+        `
+        } else{
+            si = (p * r * n)/100;
+
+            document.getElementById("ans").innerHTML = `
+            <h3> SImple Interest is ${si} </h3>
+        `
+        }
+    }
+</script>
+</html>

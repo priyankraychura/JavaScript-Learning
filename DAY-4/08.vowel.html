@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="char" placeholder="Enter character">
+    <button onclick="vowel()">vowel/consonent</button>
+
+    <div id="ans"></div>
+</body>
+<script>
+    function vowel(){
+        let ch = document.getElementById("char").value;
+        let res;
+
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+            res = "vowel";
+        } else{
+            res = "consonent";
+        }
+
+        document.getElementById("ans").innerHTML = `
+            <h3> Entered character is ${res} </h3>
+        `
+    }
+</script>
+</html>

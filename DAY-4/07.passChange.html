@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+</head>
+<body>
+    <div id="success"></div>
+    <form id="varifyPass">
+        <h3>Varify Username and Password</h3>
+        <input type="text" placeholder="Enter Username" id="username">
+        <input type="password" placeholder="Enter Current Password" name="pass" id="password">
+        <button type="button" onclick="varify()">Varify</button>
+    </form>
+
+    <form id="changePass" style="display: none;">
+        <h3>Change Password</h3>
+        <input type="text" placeholder="New Password" id="newPass">
+        <input type="password" placeholder="Re-enter Password" id="rePass">
+        <button type="button" onclick="change()">Change</button>
+    </form>
+</body>
+<script>
+    function varify(){
+        let u = "priyank";
+        let p = "pr12345";
+        let varified = false
+
+        let user = document.getElementById('username').value;
+        let pass = document.getElementById('password').value;
+
+        if(user == u){
+            if(pass == p){
+                varified = true;
+
+                document.getElementById('success').innerHTML = `Varified Successfully, Now reset Password`;
+                document.getElementById("varifyPass").style.display = "none";
+                document.getElementById("changePass").style.display = "block";
+            } else{
+                console.log("Incorrect Password",p, pass);
+            }
+        } else{
+            console.log("Incorrect Username",u, user);
+        }
+    }
+
+    function change(){
+        let newP = document.getElementById('newPass').value;
+        let reP = document.getElementById('rePass').value;
+
+        if(newP == reP){
+            if(reP.length > 8){
+                document.getElementById("varifyPass").style.display = "block";
+                document.getElementById("changePass").style.display = "none";
+
+                let user = document.getElementById('username').value = '';
+                let pass = document.getElementById('password').value = '';
+
+                document.getElementById('success').innerHTML = `Password reseted successfully`;
+            } else{
+                document.getElementById('success').innerHTML = `Password length should be greated than 8 characters`;
+            }
+        } else{
+            document.getElementById('success').innerHTML = `Both the password should be same!`;
+        }
+    }
+        
+    
+</script>
+</html>
