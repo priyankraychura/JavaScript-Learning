@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="num1">
+    <input type="text" name="" id="num2">
+    <input type="text" name="" id="num3">
+    <button onclick="check()">Check</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function check(){
+        let a = Number(document.getElementById('num1').value);
+        let b = Number(document.getElementById('num2').value);
+        let c = Number(document.getElementById('num3').value);
+        let result;
+
+        switch(true){
+            case (a == b && a == b && a == c):
+                result = "Equilateral";
+                break;
+            case (a == b || b == c || a == c):
+                result = "Isosceles";
+                break;
+            case (a != b != c):
+                result = "Scalene";
+                break;
+        }
+        document.getElementById("result").innerHTML = `<h3> Result: ${result} </h3>`;
+    }
+</script>
+</html>

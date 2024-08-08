@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter a Character: </label>
+    <input type="text" id="char">
+    <button type="button" onclick="char()">Find</button>
+
+    <div id="result"></div>
+</body>
+    <script>
+       function char(){
+        let ch = document.getElementById("char").value;
+        let result;
+
+        switch(ch){
+            case 'a':
+                result = "Vowel";
+                break;
+            case 'e':
+                result = "Vowel";
+                break;
+            case 'i':
+                result = "Vowel";
+                break;
+            case 'o':
+                result = "Vowel";
+                break;
+            case 'u':
+                result = "Vowel";
+                break;
+            default:
+                result = "Consonent";
+        }
+
+        document.getElementById("result").innerHTML = `<h3> Result: ${result} </h3>`;
+
+       }
+    </script>
+</html>

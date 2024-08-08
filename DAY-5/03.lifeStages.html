@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter am age: </label>
+    <input type="text" id="age">
+    <button type="button" onclick="ageCheck()">Find</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function ageCheck(){
+        let age = Number(document.getElementById("age").value);
+        let result;
+
+        switch(true){
+            case (age >= 0 && age <= 12):
+                result = "Child";
+                break;
+            case (age >= 13 && age <= 19):
+                result = "Teen";
+                break;
+            case (age >= 20 && age <= 59):
+                result = "Adult";
+                break;
+            case (age >= 60):
+                result = "Senior";
+                break;
+            default:
+                result = "Please enter a number";
+        }
+
+        document.getElementById("result").innerHTML = `<h3> Result: ${result} </h3>`;
+
+    }
+</script>
+</html>

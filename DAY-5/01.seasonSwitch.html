@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasons</title>
+</head>
+<body>
+    <label>Enter a Season: </label>
+    <input type="text" id="season">
+    <button type="button" onclick="season()">Find</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function season(){
+        let num = document.getElementById("season").value;
+        let season;
+
+        switch(num){
+            case "1":
+                season = "January";
+                break;
+            case "2":
+                season = "February";
+                break;
+            case "3":
+                season = "March";
+                break;
+            case "4":
+                season = "April";
+                break;
+            case "5":
+                season = "May";
+                break;
+            case "6":
+                season = "June";
+                break;
+            case "7":
+                season = "July";
+                break;
+            case "8":
+                season = "August";
+                break;
+            case "9":
+                season = "September";
+                break;
+            case "10":
+                season = "October";
+                break;
+            case "11":
+                season = "November";
+                break;
+            case "12":
+                season = "December";
+                break;
+            default:
+                season = "Invalid Choice";
+        }
+
+        document.getElementById("result").innerHTML = `<h3> Result: ${season} </h3>`;
+    }
+</script>
+</html>
