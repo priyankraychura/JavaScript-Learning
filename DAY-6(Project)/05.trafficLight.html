@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light System</title>
+</head>
+<body>
+    <select name="color" id="color">
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+    </select>
+    <button type="button" onclick="check()">Check</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function check(){
+        let color = document.getElementById("color").value;
+        let result;
+
+        if(color == "Red"){
+            result = "Stop";
+        } else if(color == "Yellow"){
+            result = "Proceed with caution";
+        } else if(color == "Green"){
+            result = "Go";
+        } else{
+            result = "Some error has occured!";
+        }
+
+        document.getElementById("result").innerHTML = `${result}`;
+    }
+</script>
+</html>

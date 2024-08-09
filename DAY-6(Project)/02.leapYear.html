@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap year checker</title>
+</head>
+<body>
+    <label for="">Enter the Year: </label>
+    <input type="number" id="num">
+    <button type="button" onclick="findLeap()">Check</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function findLeap(){
+        let year = document.getElementById("num").value;
+        let result;
+
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+            result = "Leap year";
+        } else{
+            result = "Not a leap year";
+        }
+
+        document.getElementById("result").innerHTML = `${result}`;
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Systemo</title>
+</head>
+<body>
+    <label for="">Enter total Purchase Anount: </label>
+    <input type="number" id="num">
+    <button type="button" onclick="findDisc()">Check</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function findDisc(){
+        let amount = Number(document.getElementById("num").value);
+        let discount;
+
+        switch(true){
+            case (amount <= 100):
+                discount = 0;
+                break;
+            case (amount > 100 && amount <= 500):
+                discount = 0.05;
+                break;
+            case (amount > 500 && amount <= 1000):
+                discount = 0.1;
+                break;
+            case(amount > 1000):
+                discount = 0.15;
+                break;
+            default:
+                discount = "Invalid Number";
+        }
+
+        let discAmount = amount * discount;
+        let finalAmount = amount + discAmount;
+
+        document.getElementById("result").innerHTML = `
+            <h3> Original Amount: ${amount} </h3>
+            <h3> Discount Anount: ${discAmount} </h3>
+            <h3> Final Amount: ${finalAmount} </h3>
+        `;
+    }
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Systemo</title>
+</head>
+<body>
+    <label for="">Enter the Marks: </label>
+    <input type="number" id="num">
+    <button type="button" onclick="getGrade()">Check</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    function getGrade(){
+        let marks = document.getElementById("num").value;
+        let result;
+
+        switch(true){
+            case (marks >= 90 && marks <= 100):
+                result = "A";
+                break;
+            case (marks >= 80 && marks < 90):
+                result = "B";
+                break;
+            case (marks >= 70 && marks < 80):
+                result = "C";
+                break;
+            case(marks >= 60 && marks < 60):
+                result = "D";
+                break;
+            case (marks < 60):
+                result = "F";
+                break;
+            default:
+                result = "Invalid Number";
+        }
+
+        document.getElementById("result").innerHTML = `The result is ${result}`;
+    }
+</script>
+</html>
