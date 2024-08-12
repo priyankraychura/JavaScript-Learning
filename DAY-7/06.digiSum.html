@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial of a Number</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter a number" id="num">
+    <button type="button" onclick="sum()">Find Sum</button>
+</body>
+<script>
+    function sum(){
+        let num = Number(document.getElementById('num').value);
+        let sum = 0, temp;
+
+        console.log(num)
+
+        while(num != 0){
+            temp = num % 10;
+            sum = sum + temp;
+            num = Math.floor(num / 10);
+        }
+
+        console.log(`Sum of digit is ${sum}`)
+
+    }
+</script>
+</html>
