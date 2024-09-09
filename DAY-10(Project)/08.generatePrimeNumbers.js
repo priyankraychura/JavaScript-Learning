@@ -7,11 +7,13 @@ function isPrime(num){
         }
     }
 
-    if(count == 2){
-        return true;
-    } else{
-        return false;
-    }
+    // if(count == 2){
+    //     return true;
+    // } else{
+    //     return false;
+    // }
+
+    return count == 2;
 }
 
 function generatePrimeNumbers(num){
