@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Random num from Array</title>
+    <style>
+        *{
+            font-family: "Poppins", system-ui;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .number{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(51, 103, 141);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .number h1{
+            font-size: 32px;
+            color: #fff;
+        }
+        .button{
+            padding: 5px 19px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            margin-top: 5px;
+            cursor: pointer;
+            color: rgb(51, 103, 141);
+            background-color: rgba(160, 186, 204, 0.379);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="number">
+            <h1></h1>
+        </div>
+        <button class="button">Generate</button>
+    </div>
+</body>
+<script>
+    const numbers = [23, 12, 34, 67, 88, 11, 34, 87, 90, 44];
+    let button = document.querySelector('.button');
+    let h1 = document.querySelector('.number h1');
+
+    function selectRandom(){
+        let index = Math.floor(Math.random() * 10);
+        
+        let newNum = numbers[index];
+
+        h1.innerText = `${newNum}`;
+    }
+
+    button.addEventListener('click', selectRandom);
+    selectRandom();
+    
+</script>
+</html>
