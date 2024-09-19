@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+<style>
+    .slider{
+        border: 1px solid black;
+        width: 800px;
+        display: flex;
+    }
+    .slider .img{
+        border: 1px solid black;
+        width: 100%;
+        height: 450px;
+    }
+    .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    button{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>Javascript Slider</h1>
+    <div class="slider">
+        <button onclick="prev()">Prev</button>
+        <div class="img">
+            <img src="https://cdn.pixabay.com/photo/2023/09/05/20/37/owl-8235801_1280.jpg" alt="">
+        </div>
+        <button onclick="next()">Next</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
