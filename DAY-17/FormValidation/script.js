@@ -35,10 +35,36 @@ loginForm.addEventListener("submit", (e) => {
 
 signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    let isValid = true;
+
+    invalidUsername = document.querySelector("#emptyUsername");
+    invalidEmail = document.querySelector("#emptyEmail");
+    invalidPassword = document.querySelector("#emptyPassword");
+
+    invalidUsername.classList.remove("d-block");
+    invalidEmail.classList.remove("d-block");
+    invalidPassword.classList.remove("d-block");
     
     let username = document.querySelector("#username").value;
     let email = document.querySelector("#email").value;
     let password = document.querySelector("#password").value;
+
+    if(username.length == 0){
+        invalidUsername.classList.add("d-block");
+        isValid = false;
+    }
+
+    let emailRegex = /[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/;
+    if(!emailRegex.test(email)){
+        invalidEmail.classList.add("d-block");
+        isValid = false;
+    }
+
+    let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+    if(!passRegex.test(password)){
+        invalidPassword.classList.add("d-block");
+        isValid = false;
+    }
 
     let obj = {
         username, 
@@ -46,18 +72,25 @@ signupForm.addEventListener("submit", (e) => {
         password
     }
 
-    users.push(obj);
+    if(isValid == true){
+        users.push(obj);
+
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "You're registered successfully!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    
+        signupForm.reset();
+
+        signupDiv.style.display = "none";
+        loginDiv.style.display = "block";
+    }
+
     console.log(users)
 
-    Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "You're registered successfully!",
-        showConfirmButton: false,
-        timer: 1500
-    });
-
-    signupForm.reset();
 });
 
 document.getElementById("goToLogin").addEventListener("click", () => {
