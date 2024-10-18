@@ -27,9 +27,9 @@ function fetchData(movie="home", cat="movie"){
     .then((res) => {
         console.log(res.Search);
         if(res.Response == "False"){
-            document.querySelector(".movie").innerHTML = "Doesn't found anything"
+            document.querySelector(".box").innerHTML = "Doesn't found anything"
         } else{
-            document.querySelector(".movie").innerHTML = view(res.Search)
+            document.querySelector(".box").innerHTML = view(res.Search)
         }
     })
     .catch((err) => {
@@ -42,9 +42,12 @@ fetchData();
 function view(data){
     return data.map((el) => {
         return `<div class="movie">
-                <h2>${el.Title}</h2> 
-                <h3>${el.Year}</h3>
-                <img src="${el.Poster}" alt="">
+                    <img src="${el.Poster}" alt="">
+                    <div class="data">
+                        <h2>${el.Title}</h2> 
+                        <h3>${el.Year}</h3>
+                        <h3>${el.Type}</h3>
+                    </div>
             </div>`
     }).join("");
 }
